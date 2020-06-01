@@ -8,6 +8,7 @@ node{
     }
     stage('test work image') {
       docker.image('hichem/nginx').withRun('-p 80:80') { c ->
+      sh 'docker rm -f $(docker ps -q)'
       sh 'docker ps'
       sh 'curl localhost'
       }
