@@ -4,7 +4,7 @@ node{
       checkout scm
     }
     stage('build image') {
-      app = docker.build("xavki/nginx")
+      app = docker.build("hichem/nginx")
     }
     stage('test image') {
       docker.image('hichem/nginx').withRun('-p 80:80') { c ->
